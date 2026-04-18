@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Just Translate (X)",
+  "version": "0.1.0",
+  "description": "Auto-translates every X/Twitter post via Grok, without waiting for X's Show translation button.",
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "host_permissions": [
+    "https://api.x.com/*",
+    "https://api.twitter.com/*"
+  ]
+}
